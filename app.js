@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Constants } from 'expo';
+import { View, StyleSheet } from 'react-native';
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
-
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-elements'; // 0.18.5
-
-export default class App extends Component {
+export default class FixedDimensionsBasics extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          Change code in the editor and watch it change on your phone!
-          Save to get a shareable url.
-        </Text>
-        <Card title="Local Modules">
-          <AssetExample />
-        </Card>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          backgroundColor: 'skyblue',
+        }}>
+        <View style={{width: 50,height: 50,backgroundColor: 'black', alignSelf: 'flex-end'}} />
+        <View style={{ width: 50, height: 50, backgroundColor: 'black', alignSelf: 'center' }} />
+        <View
+          style={{ width: 50, height: 50, backgroundColor: 'black' }}
+        />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
+  rectangulo: {
+    backgroundColor: '#000',
+    width: 50,
+    height: 50,
   },
 });
